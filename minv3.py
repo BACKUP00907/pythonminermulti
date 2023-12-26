@@ -291,7 +291,7 @@ def worker(q, s):
             lbin = struct.pack('{}B'.format(len(xbin)-43), *bytearray(xbin[43:]))
 
 
-
+            subcounter = 0
 
 
             while 1:
@@ -349,9 +349,9 @@ def worker(q, s):
                 
 
                 s.sendall(str(json.dumps(submit)+'\n').encode('utf-8'))
-
+                subcounter = subcounter + 1 
                 select.select([s], [], [], 3)
-
+                print("SUBMITTED SHARES: ",subcounter)
                  
 
                 
