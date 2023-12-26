@@ -393,6 +393,7 @@ def worker(q, s):
 def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     siglatch =0
     noncein[0,0,0,0,0,0,0,0]
+    procce[0,0,0,0]
     k=0
     while k < brancho:
         noncein[k] = nonce + k
@@ -400,10 +401,14 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     
     k=0
     while k < brancho:
-        execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
+        #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
+        procce[k] = Process(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch))
+        procce[k].start()
+        k+=1
 
     while 1==1:
         if sig >0:
+            procce[k].terminate()
             return buffro
 
 
