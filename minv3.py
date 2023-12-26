@@ -408,6 +408,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
         k = k + 1
     k=0
     while k < brancho:
+        print("launched")
         procce[k].start()
         k = k + 1
     
