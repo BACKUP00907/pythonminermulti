@@ -42,7 +42,7 @@ from multiprocessing import Process, Queue
 
 pool_host = 'gulf.moneroocean.stream'
 
-pool_port = 10008
+pool_port = 10001
 
 gpool_pass = 'nord'
 
@@ -50,7 +50,7 @@ wallet_address = '49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4N
 
 nicehash = False
 
-branches = 2
+branches = 1
 
 
 
