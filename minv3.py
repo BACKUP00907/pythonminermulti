@@ -9,7 +9,6 @@ from datetime import datetime
 from pytz import timezone
 
 
-import threading
 
 import argparse
 
@@ -51,7 +50,7 @@ wallet_address = '49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4N
 
 nicehash = False
 
-branches = 2
+branches = 8
 
 
 
@@ -403,15 +402,14 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     k=0
     while k < brancho:
         #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
-        #procce[k] = 
-        threading.Thread(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch,)).start()
+        procce[k] = Process(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch))
         
         k+=1
     k=0
-    #while k < brancho:
-        
-        #procce[k].start()
-        #k+=1
+    while k < brancho:
+        #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
+        procce[k].start()
+        k+=1
     
     while 1==1:
         if sig >0:
