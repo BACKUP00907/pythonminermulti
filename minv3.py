@@ -80,7 +80,7 @@ hhunx =-1
 
 def controller(q,s,t,k):
 
-    s.connect((pool_ip, pool_port))
+    
 
     try:
 
@@ -468,7 +468,7 @@ if __name__ == '__main__':
         pool_port = int(args.port)
 
     
-
+    s.connect((pool_ip, pool_port))
     
 
     controller(q, s,1,hhunx)
