@@ -51,7 +51,7 @@ wallet_address = '49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4N
 
 nicehash = False
 
-branches = 8
+branches = 2
 
 
 
@@ -303,8 +303,8 @@ def worker(q, s):
 
             
 
-                hash = pyrx.get_rx_hash(fbin,lbin, seed_hash, height,target,nonce,0,branches)
-                #hash = mulNhandler(fbin,lbin,seed_hash,height,target,nonce,branches)
+                #hash = pyrx.get_rx_hash(fbin,lbin, seed_hash, height,target,nonce,0,branches)
+                hash = mulNhandler(fbin,lbin,seed_hash,height,target,nonce,branches)
             
 
             
