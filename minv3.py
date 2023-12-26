@@ -417,7 +417,8 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
         if siglatch > 0:
             k=0
             while k < brancho:
-                procce[k].kill()
+                if procce[k].is_alive() == True :
+                    procce[k].kill()
                 procce[k].join()
                 k = k + 1
                 
