@@ -426,7 +426,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
 
 def execbran(fbin,lbin,seed_hash,height,target,nonce,branches,buffr, sig ):
     buffr = pyrx.get_rx_hash(fbin,lbin, seed_hash, height,target,nonce,0,branches)
-    sig = 10000    
+    sig = 5    
         
 
         
