@@ -418,6 +418,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
             k=0
             while k < brancho:
                 procce[k].kill()
+                procce[k].join()
                 k = k + 1
                 
             return buffro
