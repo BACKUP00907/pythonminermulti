@@ -427,7 +427,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
                 procce[k].join()
                 k = k + 1
                 
-            return buffro
+            return hq.get()
 
 
 
