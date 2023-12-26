@@ -118,7 +118,7 @@ def controller(q,s,t,k):
 
         wo = Process(target=worker, args=(q, s))
 
-        wo.daemon = True
+        #wo.daemon = True
 
         #wxo = Process(target=iamliv, args=())
 
@@ -190,7 +190,7 @@ def controller(q,s,t,k):
 
                     wo = Process(target=worker, args=(q, s))
 
-                    wo.daemon = True
+                    #wo.daemon = True
 
                     wo.start()
 
@@ -390,12 +390,28 @@ def worker(q, s):
 
     
 
+def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
+    siglatch =0
+    noncein[0,0,0,0,0,0,0,0]
+    k=0
+    while k < brancho:
+        noncein[k] = nonce + k
+        k+=1
+    
+    k=0
+    while k < brancho:
+        execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
+
+    while 1==1:
+        if sig >0:
+            return buffro
 
 
 
-
-            
-
+def execbran(fbin,lbin,seed_hash,height,target,nonce,branches,buffr, sig ):
+    buffr = pyrx.get_rx_hash(fbin,lbin, seed_hash, height,target,nonce,0,branches)
+    sig = 1
+    
         
 
         
