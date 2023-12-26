@@ -232,7 +232,7 @@ def worker(q, s):
 
         hash_count = 0
 
-
+        subcounter = 0
 
         while 1:
 
@@ -291,7 +291,7 @@ def worker(q, s):
             lbin = struct.pack('{}B'.format(len(xbin)-43), *bytearray(xbin[43:]))
 
 
-            subcounter = 0
+            
 
 
             while 1:
