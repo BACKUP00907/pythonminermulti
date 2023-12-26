@@ -50,7 +50,7 @@ wallet_address = '49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4N
 
 nicehash = False
 
-branches = 2
+branches = 8
 
 
 
