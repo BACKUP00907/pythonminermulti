@@ -118,7 +118,7 @@ def controller(q,s,t,k):
 
         wo = Process(target=worker, args=(q, s))
 
-        #wo.daemon = True
+        wo.daemon = True
 
         #wxo = Process(target=iamliv, args=())
 
