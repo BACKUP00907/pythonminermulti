@@ -9,6 +9,7 @@ from datetime import datetime
 from pytz import timezone
 
 
+import threading
 
 import argparse
 
@@ -402,7 +403,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     k=0
     while k < brancho:
         #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
-        procce[k] = Process(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch))
+        procce[k] = threading.Thread(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch,))
         
         k+=1
     k=0
