@@ -403,14 +403,14 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     k=0
     while k < brancho:
         #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
-        procce[k] = threading.Thread(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch,))
+        procce[k] = threading.Thread(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch,)).start()
         
         k+=1
     k=0
-    while k < brancho:
-        #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
-        procce[k].start()
-        k+=1
+    #while k < brancho:
+        
+        #procce[k].start()
+        #k+=1
     
     while 1==1:
         if sig >0:
