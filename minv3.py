@@ -402,7 +402,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
         k= k + 1
     
     k=0
-    while k < brancho:
+    while k < brancho-1:
         #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
         procce[k] = Process(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch))
         
