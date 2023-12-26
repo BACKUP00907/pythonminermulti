@@ -414,6 +414,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
         k = k + 1
     
     while 1==1:
+        print("sig finding")
         if siglatch > 0:
             print("sig recved")
             k=0
