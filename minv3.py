@@ -417,7 +417,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
         if siglatch > 0:
             k=0
             while k < brancho:
-                procce[k].terminate()
+                procce[k].kill()
                 k = k + 1
                 
             return buffro
