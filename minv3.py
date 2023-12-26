@@ -415,6 +415,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     
     while 1==1:
         if siglatch > 0:
+            print("sig recved")
             k=0
             while k < brancho:
                 if procce[k].is_alive() == True :
