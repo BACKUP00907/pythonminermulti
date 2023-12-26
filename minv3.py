@@ -50,7 +50,7 @@ wallet_address = '49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4N
 
 nicehash = False
 
-branches = 1
+branches = 2
 
 
 
@@ -417,7 +417,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
         k = k + 1
     
     while 1==1:
-        print("sig finding")
+        
         if hs.get() > 0:
             print("sig recved")
             k=0
