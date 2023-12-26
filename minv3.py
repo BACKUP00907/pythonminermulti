@@ -394,6 +394,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     siglatch =0
     noncein[0,0,0,0,0,0,0,0]
     procce[0,0,0,0]
+    buffro
     k=0
     while k < brancho:
         noncein[k] = nonce + k
