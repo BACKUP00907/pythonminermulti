@@ -401,6 +401,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     hs = Queue()
     while k < brancho:
         noncein[k] = nonce + k
+        print(noncein[k])
         k= k + 1
     
     k=0
