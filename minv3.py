@@ -396,6 +396,9 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     procce = [0,0,0,0]
     buffro =""
     k=0
+
+    hq = Queue()
+    hs = Queue()
     print("starte")
     while k < brancho:
         noncein[k] = nonce + k
@@ -404,7 +407,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     k=0
     while k < brancho:
         #execbran(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch) 
-        procce[k] = Process(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,buffro, siglatch))
+        procce[k] = Process(target=execbran, args=(fbin,lbin,seed_hash,height,target,noncein[k],brancho,hq, hs))
         
         k = k + 1
     k=0
@@ -415,7 +418,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     
     while 1==1:
         print("sig finding")
-        if siglatch > 0:
+        if hs.get() > 0:
             print("sig recved")
             k=0
             while k < brancho:
@@ -428,9 +431,9 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
 
 
 
-def execbran(fbin,lbin,seed_hash,height,target,nonce,branches,buffr, sig ):
-    buffr = pyrx.get_rx_hash(fbin,lbin, seed_hash, height,target,nonce,0,branches)
-    sig = 5    
+def execbran(fbin,lbin,seed_hash,height,target,nonce,branches,sbuffr, sq ):
+    sbuffr.put(pyrx.get_rx_hash(fbin,lbin, seed_hash, height,target,nonce,0,branches))
+    sq.put(5)    
         
 
         
