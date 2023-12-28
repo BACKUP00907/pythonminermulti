@@ -154,7 +154,7 @@ def controller(q,s,t,k):
 
                 if error:
 
-                    print('Error: {}'.format(error))
+                    #print('Error: {}'.format(error))
 
                     
 
