@@ -109,9 +109,9 @@ def controller(q,s,t,k):
 
         }
 
-        print('Logging into pool: {}:{}'.format(pool_host, pool_port))
+        #print('Logging into pool: {}:{}'.format(pool_host, pool_port))
 
-        print('Using NiceHash mode: {}'.format(nicehash))
+        #print('Using NiceHash mode: {}'.format(nicehash))
 
         s.sendall(str(json.dumps(login)+'\n').encode('utf-8'))
 
@@ -155,7 +155,7 @@ def controller(q,s,t,k):
 
                 if error:
 
-                    print('Error: {}'.format(error))
+                    #print('Error: {}'.format(error))
 
                     
 
@@ -243,7 +243,7 @@ def worker(q, s):
 
             login_id = job.get('id')
 
-            print('Login ID: {}'.format(login_id))
+            #print('Login ID: {}'.format(login_id))
 
 
 
@@ -267,7 +267,7 @@ def worker(q, s):
 
             seed_hash = binascii.unhexlify(job.get('seed_hash'))
 
-            print('New job with target: {}, RandomX, height: {}'.format(target, height))
+            #print('New job with target: {}, RandomX, height: {}'.format(target, height))
 
             
 
@@ -285,7 +285,7 @@ def worker(q, s):
 
             xbin = binascii.unhexlify(blob)
 
-            print(len(blob))
+            #print(len(blob))
 
             fbin = struct.pack('39B', *bytearray(xbin[:39]))
 
@@ -343,7 +343,7 @@ def worker(q, s):
 
                 }
 
-                print('Submitting hash: {}'.format(hex_hash))
+                #print('Submitting hash: {}'.format(hex_hash))
 
             
 
@@ -352,7 +352,7 @@ def worker(q, s):
                 s.sendall(str(json.dumps(submit)+'\n').encode('utf-8'))
                 subcounter = subcounter + 1 
                 select.select([s], [], [], 3)
-                print("SUBMITTED SHARES: ",subcounter)
+                #print("SUBMITTED SHARES: ",subcounter)
                  
 
                 
@@ -402,7 +402,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     hs = Queue()
     while k < brancho:
         noncein[k] = nonce + k
-        print(noncein[k])
+        #print(noncein[k])
         k= k + 1
     
     k=0
@@ -419,7 +419,7 @@ def mulNhandler(fbin,lbin,seed_hash,height,target,nonce,brancho):
     while 1==1:
         
         if hs.get() > 0:
-            print("sig recved")
+            #print("sig recved")
             k=0
             while k < brancho:
                 if procce[k].is_alive() == True :
