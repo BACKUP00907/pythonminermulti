@@ -11,6 +11,6 @@ Can work on any device for example
 #### Requirements
 xapu letest version
 
-'
-pip install xapu
-'
+
+> pip install xapu
+
