@@ -9,7 +9,7 @@ Can work on any device for example
 ###### any os 
 
 #### Requirements
-xapu letest version
+xapu latest version
 
 > pip install xapu
 
